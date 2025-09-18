@@ -124,5 +124,11 @@ while (b1)
 
 // Exercice : pour tous les taux d'intérêts allant de 1% à 10% (inclus), calculer le discount factor associé =1/(1+taux)^T (maturité stockée 
 // dans une variable)
+var maturity = 5;
+for (double i = 0.01; i <= 0.1; i += 0.001)
+{
+    var discountFactor = 1 / Math.Pow(1 + i, maturity);
+    Console.WriteLine($"Taux={i*100:F1}% -> DF={discountFactor:F5}");
+}
 
 Console.WriteLine("+ Fin du programme");
