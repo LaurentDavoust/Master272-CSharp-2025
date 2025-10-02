@@ -131,4 +131,72 @@ for (double i = 0.01; i <= 0.1; i += 0.001)
     Console.WriteLine($"Taux={i*100:F1}% -> DF={discountFactor:F5}");
 }
 
+// Exercice - Fibonacci
+var u0 = 0;
+var u1 = 1;
+var fibonacci = u0 + u1;
+for (var i = 2; i <= 30; i++)
+{
+    fibonacci = u0 + u1;
+    u0 = u1;
+    u1 = fibonacci;
+}
+Console.WriteLine($"Fibonacci(30)={fibonacci}");
+
+
+// Avec fonction
+long Fibonacci(int n)
+{
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+Console.WriteLine($"Fibonacci(49)={Fibonacci(49)}");
+
+
+// List & Dictionary
+var list = new List<double>() { 1, 2, 3, 4 };
+list.Add(23.6);
+if(list.Contains(4)) list.Remove(4);
+foreach (var item in list)
+{
+    Console.WriteLine(item);
+}
+
+var dict=new Dictionary<string, int>()
+{
+    {"un", 1 },
+    {"deux", 2 },
+    {"trois", 3 }
+};
+foreach (var keyValue in dict)
+{
+    Console.WriteLine($"{keyValue.Key}->{keyValue.Value}");
+}
+
+// Exercice :
+//[10, 9, 8, 7, 6]
+//    - Filtrer les multiples de 2
+//    - Renvoyer x^2
+var numbers = new List<int>() { 10, 9, 8, 7, 6 };
+var results = numbers
+                                .Where(x => x % 2 == 0)
+                                .Select(x => x * x);
+foreach (var r in results) Console.WriteLine(r);
+
+// Exercice :
+//[10, 9, 8, 7, 6]
+//    - Regrouper par si élément pair ou non (GroupBy)
+//    - Faire la moyenne par groupe (Average)
+//    - Dict<bool, double> -> true = pair (=> (10²+8²+6²)/3)
+//                          , false = impair (=> (7²+9²)/2)
+var dictExercice= numbers
+                            .GroupBy(elmt=>elmt%2)
+                            .ToDictionary(
+                                g => g.Key == 0, 
+                                g => g.Average(
+                                        elmt=>elmt*elmt
+                                    )
+                            );           
+
 Console.WriteLine("+ Fin du programme");
