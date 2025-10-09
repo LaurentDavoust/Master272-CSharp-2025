@@ -1,4 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using ExerciceDauphine;
+
 Console.WriteLine("+ Début du programme");
 
 // Variables numériques
@@ -151,7 +154,7 @@ long Fibonacci(int n)
     if (n == 1) return 1;
     return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
-Console.WriteLine($"Fibonacci(49)={Fibonacci(49)}");
+//Console.WriteLine($"Fibonacci(49)={Fibonacci(49)}");
 
 
 // List & Dictionary
@@ -198,5 +201,16 @@ var dictExercice= numbers
                                         elmt=>elmt*elmt
                                     )
                             );           
+
+
+// Création de voitures
+var voiture1 = new Voiture(); // Bleue
+var voiture2 = new Voiture("Rouge");
+var voiture3 = new Voiture("Verte", 200, 100);
+
+Console.WriteLine(voiture1.Couleur);
+voiture1.Trajet(100);
+voiture1.Trajet("100miles");
+Console.WriteLine(voiture1.DistanceParcourue);
 
 Console.WriteLine("+ Fin du programme");
