@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using ExerciceDauphine;
+using ExerciceDauphine.ExerciceCompteBancaire;
 
 Console.WriteLine("+ Début du programme");
 
@@ -212,5 +213,22 @@ Console.WriteLine(voiture1.Couleur);
 voiture1.Trajet(100);
 voiture1.Trajet("100miles");
 Console.WriteLine(voiture1.DistanceParcourue);
+
+// Création Compte Bancaire
+var laurent = new Utilisateur()
+{
+    Id = 1,
+    Adresse = "Rue de ....",
+    Nom = "Laurent",
+    Prenom = "Laurent",
+    VilleNaissance = "LaurentVille"
+};
+
+var martin = new Utilisateur() { };
+martin.Id = 2;
+martin.Adresse = "Rue de ....";
+martin.Nom = "Martin";
+martin.Prenom = "Martin";
+martin.VilleNaissance = "MartinVille";
 
 Console.WriteLine("+ Fin du programme");
