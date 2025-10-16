@@ -8,7 +8,7 @@ namespace ExerciceDauphine.ExerciceCompteBancaire
 {
     public abstract class Compte
     {
-        public double Solde { get; private set; }
+        public double Solde { get; protected set; }
         private List<MouvementCompte> Mouvements { get; set; }
                             =new List<MouvementCompte>();
 

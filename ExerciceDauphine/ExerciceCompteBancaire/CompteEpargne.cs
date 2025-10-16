@@ -8,6 +8,12 @@ namespace ExerciceDauphine.ExerciceCompteBancaire
 {
     public class CompteEpargne:CompteCourant
     {
+        public CompteEpargne(
+            Utilisateur utilisateur, 
+            double solde=0.0):base(utilisateur, solde)
+        {
+            
+        }
         private static double TauxInteret = 0.03;
         private const double Taux = 0.04;
         public void CalculInteret()
