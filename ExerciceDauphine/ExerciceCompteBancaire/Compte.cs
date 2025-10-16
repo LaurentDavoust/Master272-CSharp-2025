@@ -18,15 +18,26 @@ namespace ExerciceDauphine.ExerciceCompteBancaire
             Solde += montant;
         }
 
-        public void Deposer(double montant)
+        public void Deposer(double montant, string? libelle = null)
         {
-            Mouvement(montant, "Depot");
+            Mouvement(montant, libelle == null ? "Dépôt" : libelle);
         }
 
 
-        public void Retrait(double montant)
+        public void Retrait(double montant, string? libelle=null)
         {
-            Mouvement(-montant, "Retrait");
+            Mouvement(-montant, libelle==null?"Retrait":libelle);
+        }
+
+        public bool Virement(
+            Compte compteDestinataire,
+            double montant
+        )
+        {
+            if (Solde < montant) return false;
+            Retrait(montant, "Virement sortant");
+            compteDestinataire.Deposer(montant, "Virement entrant");
+            return true;
         }
     }
 }

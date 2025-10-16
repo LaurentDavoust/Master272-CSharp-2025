@@ -20,7 +20,7 @@ namespace ExerciceDauphine.ExerciceCompteBancaire
             )
         {
             Utilisateur= utilisateur;
-            Solde = Solde;
+            Solde = soldeInitial;
         }
     }
 }
