@@ -6,3 +6,5 @@
 /.vs/ExerciceDauphine/v17
 /.vs/ExerciceDauphine/FileContentIndex
 *.bin
+/ExerciceDauphineTests/bin
+/ExerciceDauphineTests/obj
